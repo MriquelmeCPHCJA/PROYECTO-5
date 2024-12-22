@@ -31,6 +31,7 @@ export const Home = () => {
      }}>
         <Typography 
         variant="h2"
+        component={'p'}
         sx={{
           color: 'white',
           fontWeight: 'bold'
@@ -40,6 +41,7 @@ export const Home = () => {
 
         <Typography
         variant="p"
+        component={'p'}
         sx={{
           color: 'white',
         }}>
@@ -64,6 +66,7 @@ export const Home = () => {
            }}>
               <Typography
               variant='p'
+              component={'p'}
               sx={{
                 fontSize: '2rem',
                 fontWeight: 'bold',
@@ -73,7 +76,6 @@ export const Home = () => {
                 Ingresar
               </Typography>
            </Button>
-
 
       </Grid2>
     </Box>

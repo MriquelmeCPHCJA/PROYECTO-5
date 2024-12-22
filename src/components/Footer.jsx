@@ -1,13 +1,24 @@
+import { Box, Typography } from '@mui/material'
 import React from 'react'
-// import './footer.css'
 
 export const Footer = () => {
   return (
-    <div className='container-footer'>
-        <p>
+    <Box
+    sx={{
+      fontSize: '1rem',
+      backgroundColor: '#212529',
+      padding: '5px',
+      textAlign: 'center',
+      color: 'white',
+    }}>
+      <Typography variant="p" component={'p'}>
             2024 &copy; | Desarrollado por Marcelo Riquelme
-        </p>
-        <p>Uso para fines Educativos</p>
-    </div>
+      </Typography>
+
+      <Typography variant="p" component={'p'}>
+
+        Uso para fines Educativos
+      </Typography>
+    </Box>
   )
 }
