@@ -41,6 +41,8 @@ export const MoviesList = () => {
     .finally(() => setLoading(false))
   }
 
+console.log('movies: ', movies)
+
   useEffect(() => { fetchMovies() }, [page])
 
   if (loading) {
@@ -50,9 +52,12 @@ export const MoviesList = () => {
       container
       justifyContent={'center'}
       alignItems={'center'}
+      backgroundColor={'black'}
       sx={{height: '86vh'}}
       >
-        <CircularProgress />
+        <CircularProgress
+        color='warning'
+        size={'10rem'} />
       </Grid2>
     )
 
