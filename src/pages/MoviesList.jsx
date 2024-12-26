@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+
 import { 
   Grid2,
   CardContent, 
@@ -64,7 +65,9 @@ console.log('movies: ', movies)
   }
 
   return (
+
     <>
+
         <Grid2 container spacing={4} sx={{
           padding: '20px', 
           backgroundColor: 'black', 
@@ -132,35 +135,8 @@ console.log('movies: ', movies)
                       sx={{backgroundColor: 'white', borderRadius: '15px'}}
               />
           </Grid2>
+
     </>
 
   )
-
-
-
-
-
-
-
-
-
-
-  // return (
-  //   <Grid2 
-  //   container
-  //   sx={
-  //     {
-  //       display: 'flex',
-  //       justifyContent: 'center',
-  //       alignItems: 'center',
-  //       height: '86vh',
-  //       backgroundColor: '#000'
-  //     }
-  //   }
-  //   >
-  //     <Grid2 item>
-  //       <h1 style={{color: '#fff'}}>MoviesList</h1>
-  //     </Grid2>
-  //   </Grid2>
-  // )
 }

@@ -57,6 +57,7 @@ export const MovieDetails = () => {
             <Rating name="read-only" value={movie.vote_average / 2} readOnly max={10} />
 
           </Stack>
+
            <p>{movie.vote_average}</p> 
 
           
