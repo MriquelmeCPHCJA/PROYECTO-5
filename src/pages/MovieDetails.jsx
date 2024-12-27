@@ -1,6 +1,7 @@
-import { Grid2, Rating, Stack } from '@mui/material'
+import { Grid2, Rating, Stack, Container, Box, Card, CardMedia, CardContent } from '@mui/material'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
+import { MovieInfo } from '../components/MovieInfo'
 
 export const MovieDetails = () => {
 
@@ -11,60 +12,23 @@ export const MovieDetails = () => {
 
 
   return (
-    <Grid2 
-    container
-    spacing={4}
+    <Box 
+    // Minheight={'86vh'}
+    minHeight={'86vh'}
+    display={'flex'}
+    flexDirection={'row'}
+    flexWrap={'wrap'}
     justifyContent={'center'}
     alignItems={'center'}
-    backgroundImage={`url(${IMG_POSTER}${movie.backdrop_path})`}
+    m={0}
+    p={4}
     sx={{
-      height: '86vh',
-      backgroundImage:`url(${IMG_POSTER}${movie.backdrop_path})`,
-      BackgroundPosition: 'right',
-      backgroundSize: 'cover',
-      p: 4,
-      }}
-    >
-      <Grid2
-      item
-      xs={12} 
-      md={6}
-      lg={2} 
-      backgroundColor={'rgba(0, 0, 0, 0.6)'}
-      borderRadius={'15px'}
-      sx={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '20px',
-        color: 'white',
-      }}>
+         backgroundImage:`url(${IMG_POSTER}${movie.backdrop_path})`,
+         backgroundSize: 'cover',
+        }} >
 
-        <div style={{marginRight: '20px'}}>
-          <img 
-            src={`${IMG_POSTER}${movie.poster_path}`}
-            alt={movie.title}
-            style={{width: '200px', height: '300px', borderRadius: '15px'}}
-          />  
-        </div>
-        <div>
-          
-          <h1>{movie.title}</h1>
-          <p>{movie.overview}</p>
-          <p>{movie.release_date}</p>
-          <Stack direction="row" spacing={2}>
-            <Rating name="read-only" value={movie.vote_average / 2} readOnly max={10} />
+        <MovieInfo  />
 
-          </Stack>
-
-           <p>{movie.vote_average}</p> 
-
-          
-        </div>
-
-      </Grid2>
-
-    </Grid2>
+    </Box>
   )
 }
