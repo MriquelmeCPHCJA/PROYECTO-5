@@ -29,7 +29,7 @@ export const MovieInfo = () => {
                 <CardMedia
                 component="img"
                 alt={movie.title}
-                height="500"
+                height="300"
                 image={`${IMG_POSTER}${movie.poster_path}`}
                 sx={{borderRadius: '15px'}}
                 />
@@ -40,13 +40,15 @@ export const MovieInfo = () => {
                 flexDirection={'row'}
                 justifyContent={'center'}
                 alignItems={'center'}
+                
                 >
                 <Card sx={{
                     // minWidth: '30%',
                     backgroundColor: 'rgba(255, 255, 255, 0)',
                     color: 'white'
+
                 }}>
-                    <CardContent>
+                    <CardContent sx={{width: 'auto'}}>
                         <Container>
                                 <Stack spacing={3}>
                                     <Typography component='h1' variant='h4' >{movie.title}</Typography>
@@ -56,13 +58,13 @@ export const MovieInfo = () => {
                         </Container>
                     </CardContent>
 
-                    <CardContent>
+                    <CardContent sx={{width: 'auto'}}>
                         <Container>
                                     <Stack spacing={1}>
-                                        <Typography component='h2' variant='h6'>Release Date: {movie.release_date}</Typography>
-                                        <Typography component='h2' variant='h6'>Original Language: {movie.original_language}</Typography>
-                                        <Typography component='h2' variant='h6'>Popularity: {movie.popularity}</Typography>
-                                        <Typography component='h2' variant='h6'>Vote Count: {movie.vote_count}</Typography>
+                                        <Typography component='h2' variant='h6'>Fecha de Lanzamiento: {movie.release_date}</Typography>
+                                        <Typography component='h2' variant='h6'>Lenguaje Original: {movie.original_language}</Typography>
+                                        <Typography component='h2' variant='h6'>Popularidad: {movie.popularity}</Typography>
+                                        <Typography component='h2' variant='h6'>Votos: {movie.vote_count}</Typography>
                                     </Stack>
                         </Container>
                     </CardContent>

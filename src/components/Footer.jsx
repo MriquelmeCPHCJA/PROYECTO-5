@@ -12,7 +12,7 @@ export const Footer = () => {
       color: 'white',
     }}>
       <Typography variant="p" component={'p'}>
-            2024 &copy; | Desarrollado por Marcelo Riquelme
+            2025 &copy; | Desarrollado por Marcelo Riquelme
       </Typography>
 
       <Typography variant="p" component={'p'}>
