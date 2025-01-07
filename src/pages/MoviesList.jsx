@@ -14,8 +14,10 @@ import {
   Pagination 
 } from '@mui/material'
 
+import  CardMovie  from '../components/CardMovie'
+
 const API_KEY = import.meta.env.VITE_API_KEY
-const IMG_POSTER = import.meta.env.VITE_API_IMG_POSTER
+// const IMG_POSTER = import.meta.env.VITE_API_IMG_POSTER
 
 
 export const MoviesList = () => {
@@ -23,11 +25,18 @@ export const MoviesList = () => {
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
+  // const [language, setLanguage] = useState()
   const [totalPages, setTotalPages] = useState(50)
 
   const changePage = (page) => {
     setPage(page)
   }
+
+  // const changeLanguage = (language) => {
+  //   setLanguage(language)
+  // }
+
+  // changeLanguage('en-US');
 
   const fetchMovies = () => {
 
@@ -42,7 +51,7 @@ export const MoviesList = () => {
     .finally(() => setLoading(false))
   }
 
-console.log('movies: ', movies)
+// console.log('movies: ', movies)
 
   useEffect(() => { fetchMovies() }, [page])
 
@@ -77,38 +86,7 @@ console.log('movies: ', movies)
           {
           movies.map(movie => (
             <Grid2 item xs={12} md={6} lg={4} key={movie.id}>
-              <Card sx={{backgroundColor: "black"}}>
-                <CardActionArea
-                  component={Link}
-                  to={`/movie/${movie.title}`}
-                  state={{movie}}
-                >
-                  <CardMedia
-                    component="img"
-                    height="320"
-                    image={`${IMG_POSTER}/${movie.poster_path}`}
-                    alt={movie.title}
-                    sx={{objectFit: 'contain',  borderRadius: '15px'}}
-                  />
-
-                   <CardContent sx={{backgroundColor: 'black'}}>
-                    <Typography 
-                    gutterBottom 
-                    variant="p"
-                    component={'p'} 
-                    sx={{
-                      color: 'white',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                      textAlign: 'center',
-                      }}>
-                      {movie.title}
-                    </Typography>
-
-                  </CardContent>  
-                </CardActionArea>
-              </Card>
+              <CardMovie movie={movie} />
             </Grid2>
           ))
           }
@@ -134,6 +112,7 @@ console.log('movies: ', movies)
                       }}
                       sx={{backgroundColor: 'white', borderRadius: '15px'}}
               />
+              {/* {changeLanguage('en-US')} */}
           </Grid2>
 
     </>

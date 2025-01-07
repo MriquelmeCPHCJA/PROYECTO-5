@@ -2,6 +2,7 @@ import { Grid2, Rating, Stack, Container, Box, Card, CardMedia, CardContent } fr
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { MovieInfo } from '../components/MovieInfo'
+import CardMovie from '../components/CardMovie'
 
 export const MovieDetails = () => {
 
@@ -9,6 +10,7 @@ export const MovieDetails = () => {
   const movie = location.state?.movie
   const IMG_POSTER = import.meta.env.VITE_API_IMG_POSTER
 
+  console.log(location)
 
 
   return (
@@ -27,7 +29,8 @@ export const MovieDetails = () => {
          backgroundSize: 'cover',
         }} >
 
-        <MovieInfo  />
+        <MovieInfo movie={movie} IMG_POSTER={IMG_POSTER}  />
+        {/* <CardMovie movie={movie} /> */}
 
     </Box>
   )

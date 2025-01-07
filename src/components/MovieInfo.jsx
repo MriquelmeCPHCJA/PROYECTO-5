@@ -4,11 +4,9 @@ import { useLocation } from 'react-router-dom'
 
 
 
-export const MovieInfo = () => {
+export const MovieInfo = ({movie, IMG_POSTER}) => {
 
-      const location = useLocation()
-      const movie = location.state?.movie
-      const IMG_POSTER = import.meta.env.VITE_API_IMG_POSTER
+
 
   return (
 
