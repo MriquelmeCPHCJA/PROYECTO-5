@@ -15,6 +15,7 @@ import {
   Card,
   CardActionArea,
   Pagination,
+  Button,
 } from "@mui/material";
 
 import CardMovie from "../components/CardMovie";
@@ -41,7 +42,7 @@ export const MoviesList = () => {
 
   const fetchMovies = () => {
     setLoading(true);
-    console.log(language);
+
 
     const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}&language=${language}`;
 
@@ -81,7 +82,13 @@ export const MoviesList = () => {
 
   return (
     <>
-
+      <Box sx={{ minWidth: 120, display: "flex ", p: 2  ,alignContent: "center", justifyContent: "center" }}>
+        <Button variant="contained" onClick={() => changeLanguage('es-MX')}>Español</Button>
+        <Button variant="contained" onClick={() => changeLanguage('en-US')}>Ingles</Button>
+        <Button variant="contained" onClick={() => changeLanguage('it-IT')}>Italiano</Button>
+        <Button variant="contained" onClick={() => changeLanguage('fr-FR')}>Frances</Button>
+        <Button variant="contained" onClick={() => changeLanguage('de-DE')}>Aleman</Button>
+      </Box>
 
       <Grid2
         container
@@ -102,26 +109,6 @@ export const MoviesList = () => {
           </Grid2>
         ))}
       </Grid2>
-      <Box sx={{ minWidth: 120 }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Idiomas</InputLabel>
-          <Select
-            // labelId="demo-simple-select-label"
-            // id="demo-simple-select"
-            // value={language}
-            // languaje={language}
-            label="Idioma"
-            onChange={(event, language) =>{
-              changeLanguage(language);
-            }
-            }
-          >
-            <MenuItem value={'es-MX'}>Español</MenuItem>
-            <MenuItem value={'en-US'}>Ingles</MenuItem>
-            <MenuItem value={'it-IT'}>Italiano</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
 
       <Grid2
         container
