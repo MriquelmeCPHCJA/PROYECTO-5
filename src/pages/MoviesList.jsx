@@ -23,6 +23,14 @@ import CardMovie from "../components/CardMovie";
 const API_KEY = import.meta.env.VITE_API_KEY;
 // const IMG_POSTER = import.meta.env.VITE_API_IMG_POSTER
 
+const langs = [
+  { name: "Español", code: "es-MX" },
+  { name: "Ingles", code: "en-US" },
+  { name: "Italiano", code: "it-IT" },
+  { name: "Frances", code: "fr-FR" }
+  // { name: "Aleman", code: "de-DE" },
+];
+
 export const MoviesList = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -57,8 +65,6 @@ export const MoviesList = () => {
       .finally(() => setLoading(false));
   };
 
-  // console.log('movies: ', movies)
-
   useEffect(() => {
     if (language) {
       fetchMovies();
@@ -83,11 +89,11 @@ export const MoviesList = () => {
   return (
     <>
       <Box sx={{ minWidth: 120, display: "flex ", p: 2  ,alignContent: "center", justifyContent: "center" }}>
-        <Button variant="contained" onClick={() => changeLanguage('es-MX')}>Español</Button>
-        <Button variant="contained" onClick={() => changeLanguage('en-US')}>Ingles</Button>
-        <Button variant="contained" onClick={() => changeLanguage('it-IT')}>Italiano</Button>
-        <Button variant="contained" onClick={() => changeLanguage('fr-FR')}>Frances</Button>
-        <Button variant="contained" onClick={() => changeLanguage('de-DE')}>Aleman</Button>
+        { 
+          langs.map((lang) => (
+            <Button variant="contained" onClick={() => changeLanguage(lang.code)}>{lang.name}</Button>
+          ))
+        }
       </Box>
 
       <Grid2
@@ -134,7 +140,6 @@ export const MoviesList = () => {
           }}
           sx={{ backgroundColor: "white", borderRadius: "15px" }}
         />
-        {/* {changeLanguage('en-US')} */}
       </Grid2>
     </>
   );
