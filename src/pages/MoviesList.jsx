@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { FR, ES, GB, IT } from 'country-flag-icons/react/3x2'
 
 import {
   Box,
-  InputLabel,
-  MenuItem,
-  FormControl,
-  Select,
   Grid2,
-  CardContent,
-  CardMedia,
-  Typography,
   CircularProgress,
-  Card,
-  CardActionArea,
   Pagination,
   Button,
 } from "@mui/material";
@@ -21,15 +12,13 @@ import {
 import CardMovie from "../components/CardMovie";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-// const IMG_POSTER = import.meta.env.VITE_API_IMG_POSTER
 
 const langs = [
-  { name: "Español", code: "es-MX" },
-  { name: "Ingles", code: "en-US" },
-  { name: "Italiano", code: "it-IT" },
-  { name: "Frances", code: "fr-FR" }
-  // { name: "Aleman", code: "de-DE" },
-];
+   { name: "Español", code: "es-MX", flag:  <ES style={{height: 20}}/> },
+   { name: "Ingles", code: "en-US", flag: <GB style={{height: 20}}/> },
+   { name: "Italiano", code: "it-IT", flag: <IT title="" style={{height: 20}}/> },
+   { name: "Frances", code: "fr-FR",  flag: <FR title="" style={{height: 20}}/> }
+ ];
 
 export const MoviesList = () => {
   const [movies, setMovies] = useState([]);
@@ -46,11 +35,8 @@ export const MoviesList = () => {
     setLanguage(language);
   };
 
-  // changeLanguage('en-US');
-
   const fetchMovies = () => {
     setLoading(true);
-
 
     const API_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}&language=${language}`;
 
@@ -71,7 +57,6 @@ export const MoviesList = () => {
     }
   }, [page, language]);
   
-
   if (loading) {
     return (
       <Grid2
@@ -88,13 +73,15 @@ export const MoviesList = () => {
 
   return (
     <>
-      <Box sx={{ minWidth: 120, display: "flex ", p: 2  ,alignContent: "center", justifyContent: "center" }}>
+      <Box
+      backgroundColor={"black"}
+      sx={{  minWidth: 120, display: "flex ", gap: 1,  p: 2  ,alignContent: "center", justifyContent: "right" }}>
         { 
           langs.map((lang) => (
-            <Button variant="contained" onClick={() => changeLanguage(lang.code)}>{lang.name}</Button>
+            <Button variant="text" onClick={() => changeLanguage(lang.code)}> {lang.flag} </Button> // {lang.name}
           ))
         }
-      </Box>
+      </Box> 
 
       <Grid2
         container
@@ -107,7 +94,6 @@ export const MoviesList = () => {
           justifyContent: "center",
         }}
       >
-
 
         {movies.map((movie) => (
           <Grid2 item xs={12} md={6} lg={4} key={movie.id}>
@@ -131,10 +117,6 @@ export const MoviesList = () => {
           color="primary"
           count={totalPages}
           page={page}
-          // este bloque es para activar las 47557 páginas
-          // onChange={(event, newPage) => {
-          //   changePage(newPage);
-          // }}
           onChange={(event, page) => {
             changePage(page);
           }}

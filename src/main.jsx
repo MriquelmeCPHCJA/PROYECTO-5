@@ -10,7 +10,7 @@ import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { Router } from './Router'
 import { CssBaseline } from '@mui/material';
-// import App from './App.jsx'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
