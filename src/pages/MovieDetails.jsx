@@ -1,6 +1,6 @@
-import { Box, Button } from '@mui/material'
+import { Box} from '@mui/material'
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { MovieInfo } from '../components/MovieInfo'
 
 export const MovieDetails = () => {
@@ -17,7 +17,7 @@ export const MovieDetails = () => {
     <Box 
     minHeight={'86vh'}
     display={'flex'}
-    flexDirection={'row'}
+    flexDirection={'column'}
     flexWrap={'wrap'}
     justifyContent={'center'}
     alignItems={'center'}
@@ -29,6 +29,7 @@ export const MovieDetails = () => {
         }} >
 
         <MovieInfo movie={movie} IMG_POSTER={IMG_POSTER}  />
+        
 
         <Box
           display={'flex'}
@@ -37,14 +38,9 @@ export const MovieDetails = () => {
           alignItems={'center'}
           p={2}
           sx={{
-            backgroundColor: 'black',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
           }}
           >
-            <Button 
-            component={Link}
-            to={'/movies'}
-            variant="contained" 
-            color="error" >Volver</Button>
       </Box>
     </Box>
  

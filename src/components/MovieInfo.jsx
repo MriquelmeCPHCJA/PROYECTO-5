@@ -1,18 +1,14 @@
-import { Grid2, Rating, Stack, Container, Box, Card, CardMedia, CardContent, Typography } from '@mui/material'
+import { Button, Rating, Stack, Container, Box, Card, CardMedia, CardContent, Typography } from '@mui/material'
 import React from 'react'
-import { useLocation } from 'react-router-dom'
-
-
+import { Link } from 'react-router-dom'
 
 export const MovieInfo = ({movie, IMG_POSTER}) => {
-
-
 
   return (
 
     <Box
     display={'flex'}
-    flexDirection={'row'}
+    flexDirection={'column'}
     flexWrap={'wrap'}
     justifyContent={'center'}
     alignItems={'center'}
@@ -41,7 +37,6 @@ export const MovieInfo = ({movie, IMG_POSTER}) => {
                 
                 >
                 <Card sx={{
-                    // minWidth: '30%',
                     backgroundColor: 'rgba(255, 255, 255, 0)',
                     color: 'white'
 
@@ -67,7 +62,18 @@ export const MovieInfo = ({movie, IMG_POSTER}) => {
                         </Container>
                     </CardContent>
                 </Card>
+
             </Box>
+
+            <Button 
+            component={Link}
+            to={'/movies'}
+            variant="contained" 
+            color="error" 
+            >
+                Volver
+            </Button>
+            
     </Box>
 
   )

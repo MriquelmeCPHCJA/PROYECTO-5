@@ -39,21 +39,19 @@ export const Contact = () => {
         <h1>Contáctanos</h1>
         <FormControl>
           <FormLabel>Nombre Completo</FormLabel>
-          <input type="text" />
+          <input type="text" id='name'/>
 
           <FormLabel>Email</FormLabel>
-          <input type="email" />
+          <input type="email" id='email'/>
 
           <FormLabel>Mensaje</FormLabel>
           <textarea />
 
           <BasicModal open={isModalOpen} onClose={handleCloseModal} />
 
-          {/* <Button >Enviar</Button> */}
         </FormControl>
+        
       </Box>
-
-      {/* Modal */}
 
     </Box>
   );
