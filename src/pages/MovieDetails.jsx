@@ -29,19 +29,7 @@ export const MovieDetails = () => {
         }} >
 
         <MovieInfo movie={movie} IMG_POSTER={IMG_POSTER}  />
-        
 
-        <Box
-          display={'flex'}
-          flexDirection={'row'}
-          justifyContent={'center'}
-          alignItems={'center'}
-          p={2}
-          sx={{
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          }}
-          >
-      </Box>
     </Box>
  
     </>

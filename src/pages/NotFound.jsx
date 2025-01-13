@@ -39,7 +39,7 @@ export const NotFound = () => {
             </Typography>
 
             <Button variant='contained' color='warning' href='/' sx={{marginTop: '1rem'}}>
-               <Link to='/' style={{textDecoration: 'none', color: 'white'}}>Volver al Inicio</Link>
+               <Link to='/movies' style={{textDecoration: 'none', color: 'white'}}>Volver al Inicio</Link>
             </Button>
 
             <Grid2 item>

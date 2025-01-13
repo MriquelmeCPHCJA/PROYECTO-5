@@ -51,13 +51,58 @@ export const MovieInfo = ({movie, IMG_POSTER}) => {
                         </Container>
                     </CardContent>
 
-                    <CardContent sx={{width: 'auto'}}>
+                    <CardContent sx={{ width: 'auto'}}>
                         <Container>
-                                    <Stack spacing={1}>
-                                        <Typography component='h2' variant='h6'>Fecha de Lanzamiento: {movie.release_date}</Typography>
-                                        <Typography component='h2' variant='h6'>Lenguaje Original: {movie.original_language}</Typography>
-                                        <Typography component='h2' variant='h6'>Popularidad: {movie.popularity}</Typography>
-                                        <Typography component='h2' variant='h6'>Votos: {movie.vote_count}</Typography>
+                                    <Stack bgcolor={'rgba(255, 255, 255, 0.5) '} borderRadius={3} p={2} color={'black'}  spacing={1}>
+
+                                        <Box display={'flex'} flexDirection={'row'}   alignItems={'center'} gap={2} >
+
+                                            <Box display={'flex'} flexDirection={'row'} alignItems={'center'} >
+                                                <Typography component='h2' variant='h6'>Fecha de Lanzamiento: </Typography>
+                                            </Box>
+
+                                            <Box display={'flex'} flexDirection={'row'}  alignItems={'center'} >
+                                                <Typography component='h3' variant='body1'>{movie.release_date}</Typography>
+                                            </Box>
+
+                                        </Box>
+
+                                        <Box display={'flex'} flexDirection={'row'}   alignItems={'center'} gap={2} >
+                                        
+                                            <Box display={'flex'} flexDirection={'row'}  alignItems={'center'} >
+                                                <Typography component='h2' variant='h6'>Lenguaje Original: </Typography>
+                                            </Box>
+
+                                            <Box display={'flex'} flexDirection={'row'} alignItems={'center'} >
+                                                <Typography component='h3' variant='body1'>{movie.original_language}</Typography>
+                                            </Box>
+
+                                        </Box>
+
+                                        <Box display={'flex'} flexDirection={'row'}   alignItems={'center'} gap={2} >
+
+                                            <Box display={'flex'} flexDirection={'row'}  alignItems={'center'} >
+                                                <Typography component='h2' variant='h6'>Popularidad: </Typography>
+                                            </Box>
+
+                                            <Box display={'flex'} flexDirection={'row'}  alignItems={'center'} >
+                                                    <Typography component='h3' variant='body1'>{movie.popularity}</Typography>
+                                            </Box>
+
+                                        </Box>
+
+                                        <Box display={'flex'} flexDirection={'row'}   alignItems={'center'} gap={2} >
+                                       
+                                            <Box display={'flex'} flexDirection={'row'} alignItems={'center'} >
+                                                <Typography component='h2' variant='h6'>Votos: </Typography>
+                                            </Box>
+
+                                            <Box display={'flex'} flexDirection={'row'} alignItems={'center'} >
+                                                <Typography component='h3' variant='body1'>{movie.vote_count}</Typography>
+                                            </Box>
+
+                                        </Box>
+
                                     </Stack>
                         </Container>
                     </CardContent>

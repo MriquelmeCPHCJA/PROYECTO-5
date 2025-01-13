@@ -15,7 +15,6 @@ import { Link } from 'react-router-dom';
 const pages = [
   { name: 'Bienvenida', path: '/' },
   { name: 'Movies', path: '/movies' },
-  // { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' }
 ];
 

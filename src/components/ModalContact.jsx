@@ -50,7 +50,6 @@ export default function BasicModal() {
           to='/movies'
           variant='contained' 
           color='error'  
-          // onClick={handleOpen}
           >
             Volver
             </Button>
