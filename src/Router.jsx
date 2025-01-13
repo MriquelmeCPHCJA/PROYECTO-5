@@ -7,7 +7,7 @@ import { Contact } from "./pages/Contact";
 import { NotFound } from "./pages/NotFound";
 
 export const Router = createBrowserRouter([
-    {   path: "/", element: <Home />},
+    {   path: "/bienvenida", element: <Home />},
     {
         path: "/", element: <Layout />,
         children: [
