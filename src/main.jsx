@@ -6,7 +6,6 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { Router } from './Router'
 import { CssBaseline } from '@mui/material';

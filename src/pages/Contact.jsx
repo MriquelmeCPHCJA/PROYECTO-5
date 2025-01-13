@@ -1,9 +1,33 @@
 import { Box, FormControl, FormLabel } from '@mui/material';
 import React, { useState } from 'react';
 import BasicModal from '../components/ModalContact';
+ import { useLocation } from 'react-router-dom';
+
 
 export const Contact = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+      const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+      });
+
+      const { name, email, message } = useLocation().state || {};
+
+      const handleChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.id]: e.target.value,
+        });
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsModalOpen(true);
+        
+      };
+
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -38,16 +62,28 @@ export const Contact = () => {
 
         <h1>Contáctanos</h1>
         <FormControl>
-          <FormLabel>Nombre Completo</FormLabel>
-          <input type="text" id='name'/>
+          <FormLabel htmlFor="name">
+            Nombre Completo
+          </FormLabel>
+          <input type="text" id='name' name="name" value={formData.name} onChange={handleChange} required/>
 
-          <FormLabel>Email</FormLabel>
-          <input type="email" id='email'/>
+          <FormLabel htmlFor="email"> 
+            Email
+          </FormLabel>
+          <input type="email" id='email' name="email" value={formData.email} onChange={handleChange} required/>
 
-          <FormLabel>Mensaje</FormLabel>
-          <textarea />
+          <FormLabel htmlFor='message'>
+            Mensaje
+          </FormLabel>
+          <textarea type="text" id='message' name='message' value={formData.message} onChange={handleChange}/>
 
-          <BasicModal open={isModalOpen} onClose={handleCloseModal} />
+          <BasicModal 
+          open={isModalOpen} 
+          onClose={handleCloseModal} 
+          name={formData.name}
+          email={formData.email}
+          message={formData.message}
+          />
 
         </FormControl>
         

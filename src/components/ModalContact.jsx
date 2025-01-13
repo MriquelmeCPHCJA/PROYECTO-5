@@ -18,7 +18,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal() {
+export default function BasicModal({name, email}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -40,10 +40,10 @@ export default function BasicModal() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Gracias por comunicarse con nosotros
+            Gracias por comunicarse con nosotros "{`${name}`}"
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Nos pondremos en contacto con usted lo antes posible.
+            Nos pondremos en contacto con usted lo antes posible a tu corero " {`${email}`}".
           </Typography>
           <Button 
           component={Link}
