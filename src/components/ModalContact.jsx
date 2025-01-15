@@ -28,7 +28,7 @@ export default function BasicModal({name, email}) {
     display={'flex'}
     flexDirection={'column'}
     gap={2}
-    width={'30%'}
+    width={'50%'}
     margin={'auto'}
     padding={'1rem'}>
       <Button variant='contained' color='error'  onClick={handleOpen}>Enviar</Button>

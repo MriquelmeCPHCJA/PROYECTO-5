@@ -60,7 +60,7 @@ export const Contact = () => {
           boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
         }}>
 
-        <h1>Contáctanos</h1>
+        <h2>Contáctanos</h2>
         <FormControl>
           <FormLabel htmlFor="name">
             Nombre Completo
